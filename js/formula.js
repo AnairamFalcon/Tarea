@@ -1,11 +1,26 @@
-document.write("<h2>Equipo My Little Pony</h2>")
 
-var a=1;
-var b=-5;
-var c=-84;
+function formula() {
+    var a,b,c,totalp,totaln, tx1,tx2;
+    a=document.getElementById("x2").value;
+    b=document.getElementById("x").value;
+    c=document.getElementById("c").value;
+    totalp=((parseFloat(-b))+Math.pow(((Math.pow(parseFloat(b),2))-(4*parseFloat(a)*parseFloat(c))),(1/2)))/(2*parseFloat(a));
+    totalm=((parseFloat(-b))-Math.pow(((Math.pow(parseFloat(b),2))-(4*parseFloat(a)*parseFloat(c))),(1/2)))/(2*parseFloat(a));
 
-var formulap=((-b)+Math.pow(((Math.pow(b,2))-(4*a*c)),(1/2)))/(2*a);
-var formulan=((-b)-Math.pow(((Math.pow(b,2))-(4*a*c)),(1/2)))/(2*a);
-console.log("Las raíces de la ecuación con los valores de: a=",a+", b=",b+", c=",c, "es:")
-console.log("x1=",formulap)
-console.log("x2=",formulan)
+    if(isNaN(a)||isNaN(b)||isNaN(c)){ //Is not a number, los valores de los inputs
+        txt1="Te faltó un número reina"
+    }else{
+        totalp=((parseFloat(-b))+Math.pow(((Math.pow(parseFloat(b),2))-(4*parseFloat(a)*parseFloat(c))),(1/2)))/(2*parseFloat(a));
+        totaln=((parseFloat(-b))-Math.pow(((Math.pow(parseFloat(b),2))-(4*parseFloat(a)*parseFloat(c))),(1/2)))/(2*parseFloat(a));
+        tx1="x1: " +totalp;
+        tx2="x2: "+totaln;
+    }
+
+    document.getElementById("total").innerHTML=tx1;
+    document.getElementById("total2").innerHTML=tx2;
+}
+
+//var a=1;
+//var b=-5;
+//var c=6;
+
